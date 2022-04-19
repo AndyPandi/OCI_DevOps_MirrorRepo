@@ -1,10 +1,10 @@
-## OCI DevOps Mirror repository 사용법
+# OCI DevOps Mirror repository 사용법
 
 > Oracle Cloud > Developer Services > **DevOps**
 
 OCI DevOps service의 Code Repository 에서 외부 저장소(ex. github, gitlab)를 사용하는 방법을 알아보겠습니다.
 
-### Part1 Policy (권한) 생성
+## Part1 Policy (권한) 생성
 DevOps 서비스의 Code Repository 와 External Core Repository 사용을 위한 Policy를 생성합니다.
 
 - Code repository 를 위한 Dynamic group 생성
@@ -32,7 +32,7 @@ DevOps 서비스의 Code Repository 와 External Core Repository 사용을 위�
   2. root compartment 에서 다음 policy 생성
 `Allow dynamic-group ConnectionDynamicGroup to read secret-family in tenancy`
  
-### Part 2 OCI Vault 생성
+## Part 2 OCI Vault 생성
 OCI DevOps service 에서 External connection 생성을 위해서 Vault secret 이 필요합니다.
 
 - OCI Vault 및 Key 생성
@@ -64,4 +64,4 @@ OCI DevOps service 에서 External connection 생성을 위해서 Vault secret �
    4. Compartment 선택, Name 입력, Encryption Key 선택(이전 스텝에서 생성), Secret Centents 에 이전 스텝에서 생성한 GitHub PAT 입력 후 `Create Secret` 버튼 클릭
    ![](images/2a-oci-secret.png)
 
-### Part 3 OCI Mirror repository 설정
+## Part 3 OCI Mirror repository 설정
