@@ -10,27 +10,33 @@ DevOps 서비스의 Code Repository 와 External Core Repository 사용을 위�
 - Code repository 를 위한 Dynamic group 생성
   1. `Identity & Security > Identity > Dynamic Groups` 메뉴로 이동
   2. **CoderepoDynamicGroup** 이름으로 다음 Rule을 입력 후 생성버튼을 클릭 (※ compartmentOCID는 각자 변경)
-`ALL {resource.type = 'devopsrepository', resource.compartment.id = 'compartmentOCID'}`
+
+
+      `ALL {resource.type = 'devopsrepository', resource.compartment.id = 'compartmentOCID'}`
 
 - Dynamic group 에 DevOps resource 를 관리할 수 있는 권한 생성
   1. `Identity & Security > Identity > Policies`  메뉴로 이동
   2. DevOps 서비스를 사용하는 compartment 에서 다음 policy 생성 (※ compartment_name 은 각자 변경)
-`Allow dynamic-group CoderepoDynamicGroup to manage devops-family in compartment <compartment_name>`
+
+      `Allow dynamic-group CoderepoDynamicGroup to manage devops-family in compartment <compartment_name>`
 
 - Dynamic group 에 모든 리소스를 관리할 수 있는 권한 생성
   1. `Identity & Security > Identity > Policies`  메뉴로 이동
   2. root compartment 에서 다음 policy 생성
-`Allow dynamic-group CoderepoDynamicGroup to manage all-resources in tenancy`
+
+      `Allow dynamic-group CoderepoDynamicGroup to manage all-resources in tenancy`
 
 - External code repositories 를 위한 Dynamic group 생성
   1. `Identity & Security > Identity > Dynamic Groups` 메뉴로 이동
   2. **ConnectionDynamicGroup** 이름으로 다음 Rule을 입력 후 생성버튼을 클릭 (※ compartmentOCID는 각자 변경)
-`ALL {resource.type = 'devopsconnection', resource.compartment.id = 'compartmentOCID'}`
+
+      `ALL {resource.type = 'devopsconnection', resource.compartment.id = 'compartmentOCID'}`
 
 - Dynamic group 에 OCI Vault secret을 조회할 수 있는 권한 생성
   1. `Identity & Security > Identity > Policies`  메뉴로 이동
   2. root compartment 에서 다음 policy 생성
-`Allow dynamic-group ConnectionDynamicGroup to read secret-family in tenancy`
+
+      `Allow dynamic-group ConnectionDynamicGroup to read secret-family in tenancy`
  
 ## Part 2 OCI Vault 생성
 OCI DevOps service 에서 External connection 생성을 위해서 Vault secret 이 필요합니다.
@@ -85,4 +91,3 @@ OCI DevOps 서비스에서 External Connection 을 생성하고 Mirror repositor
   3. `Mirror repository' 버튼 클릭
   4. 완료
    ![](images/4a-mirror-repocode.png)
-
