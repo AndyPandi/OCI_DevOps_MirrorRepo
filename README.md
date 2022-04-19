@@ -8,9 +8,9 @@ OCI DevOps service의 Code Repository 에서 외부 저장소(ex. github, gitlab
 DevOps 서비스의 Code Repository 와 External Core Repository 사용을 위한 Policy를 생성합니다.
 
 - Code repository 를 위한 Dynamic group 생성
- 1. `Identity & Security > Identity > Dynamic Groups` 메뉴로 이동
- 2. **CoderepoDynamicGroup** 이름으로 다음 Rule을 입력 후 생성버튼을 클릭 (※ compartmentOCID는 각자 변경)
- 3. ```ALL {resource.type = 'devopsrepository', resource.compartment.id = 'compartmentOCID'}```
+  1. `Identity & Security > Identity > Dynamic Groups` 메뉴로 이동
+  2. **CoderepoDynamicGroup** 이름으로 다음 Rule을 입력 후 생성버튼을 클릭 (※ compartmentOCID는 각자 변경)
+   ```ALL {resource.type = 'devopsrepository', resource.compartment.id = 'compartmentOCID'}```
 
 - Dynamic group 에 DevOps resource 를 관리할 수 있는 권한 생성
   1. `Identity & Security > Identity > Policies`  메뉴로 이동
