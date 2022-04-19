@@ -79,9 +79,9 @@ OCI DevOps 서비스에서 External Connection 을 생성하고 Mirror repositor
   
   1. DevOps 서비스의 project 화면에서 왼쪽의 `Code Repositories` 메뉴로 이동
   2. `Mirror repository` 버튼 클릭
-    + Connection 선택 : 이전 단계에서 만든 External connection 선택
-    + Repository : GitHub 의 레포지토리에서 미러링할 레포지토리 선택
-    + Mirroring schedule : 미러링 주기 선택 (deault는 15분)
+     + Connection 선택 : 이전 단계에서 만든 External connection 선택
+     + Repository : GitHub 의 레포지토리에서 미러링할 레포지토리 선택
+     + Mirroring schedule : 미러링 주기 선택 (deault는 15분)
   3. `Mirror repository' 버튼 클릭
   4. 완료
    ![](images/4a-mirror-repocode.png)
